@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  
+  <ItemGroup>
+    <PackageReference Include="ARNetExt.Models" />
+    <PackageReference Include="ARNetExt.Strings" />
+    <PackageReference Include="ARNetExt.Utils" />
+    <PackageReference Include="Asp.Versioning.Abstractions" />
+    <PackageReference Include="Asp.Versioning.Http" />
+    <PackageReference Include="Asp.Versioning.Mvc" />
+    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" />
+    <PackageReference Include="Microsoft.Bcl.Cryptography" />
+    <PackageReference Include="Serilog" />
+    <PackageReference Include="Serilog.AspNetCore" />
+    <PackageReference Include="Serilog.Enrichers.Environment" />
+    <PackageReference Include="Serilog.Enrichers.Thread" />
+    <PackageReference Include="Serilog.Extensions.Hosting" />
+    <PackageReference Include="Serilog.Sinks.Console" />
+    <PackageReference Include="Serilog.Sinks.File" />
+    <PackageReference Include="Serilog.Extensions.Logging" />
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="Scalar.AspNetCore" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Microsoft.OpenApi" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\AR.Infrastructure.DI\AR.Infrastructure.DI.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\..\Infrastructure\AR.Infrastructure.Hosting\AR.Infrastructure.Hosting.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\..\Infrastructure\AR.Infrastructure.Json\AR.Infrastructure.Json.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\..\Infrastructure\AR.Infrastructure.Jwt\AR.Infrastructure.Jwt.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\..\Infrastructure\AR.Infrastructure.Providers\AR.Infrastructure.Providers.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\..\Shared\AR.Shared\AR.Shared.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\AR.ApiServices\AR.ApiServices.csproj" ExcludeAssets="compile" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.qa.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>appsettings.json</DependentUpon>
+    </Content>
+    <Content Update="appsettings.prod.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>appsettings.json</DependentUpon>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\Dockerfile">
+      <Link>Dockerfile</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\.dockerignore">
+      <Link>.dockerignore</Link>
+    </Content>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,24 @@
+<Project>
+  <!-- Apply to all SDK-style projects in the solution -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Configurations>Debug;Release</Configurations>
+    <LangVersion>default</LangVersion>
+    <!-- Enable built-in .NET Roslyn analyzers -->
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <!-- Use latest stable analyzer rules matching current SDK -->
+    <AnalysisLevel>latest</AnalysisLevel>
+    <!-- Enable code style analysis during build (not only in IDE) -->
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <!-- temp for sqllite fix -->
+    <NoWarn>$(NoWarn);1591;NU1903;AV0029;AV0030</NoWarn>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" />
+  </ItemGroup>
+</Project>

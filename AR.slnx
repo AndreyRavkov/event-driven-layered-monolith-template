@@ -1,0 +1,33 @@
+<Solution>
+  <Folder Name="/API/">
+    <Project Path="API/AR.API/AR.API.csproj" />
+    <Project Path="API/AR.ApiServices/AR.ApiServices.csproj" />
+  </Folder>
+  <Folder Name="/Core/">
+    <Project Path="Core/AR.Core.Configurations/AR.Core.Configurations.csproj" />
+    <Project Path="Core/AR.Core.EventHandlers/AR.Core.EventHandlers.csproj" />
+    <Project Path="Core/AR.Core.AppServices/AR.Core.AppServices.csproj" />
+    <Project Path="Core/AR.Core.Domain/AR.Core.Domain.csproj" />
+    <Project Path="Core/AR.Core.EventQueueConsumers/AR.Core.EventQueueConsumers.csproj" />
+    <Project Path="Core/AR.Core.Events/AR.Core.Events.csproj" />
+    <Project Path="Core/AR.Core.Persistence/AR.Core.Persistence.csproj" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="Infrastructure/AR.Infrastructure.BackgroundServices/AR.Infrastructure.BackgroundServices.csproj" />
+    <Project Path="Infrastructure/AR.Infrastructure.DI/AR.Infrastructure.DI.csproj" />
+    <Project Path="Infrastructure/AR.Infrastructure.Hosting/AR.Infrastructure.Hosting.csproj" />
+    <Project Path="Infrastructure/AR.Infrastructure.Json/AR.Infrastructure.Json.csproj" />
+    <Project Path="Infrastructure/AR.Infrastructure.Jwt/AR.Infrastructure.Jwt.csproj" />
+    <Project Path="Infrastructure/AR.Infrastructure.Providers/AR.Infrastructure.Providers.csproj" />
+    <Project Path="Infrastructure/AR.Infrastructure.Queues/AR.Infrastructure.Queues.csproj" />
+  </Folder>
+  <Folder Name="/Shared/">
+    <Project Path="Shared/AR.Shared/AR.Shared.csproj" />
+  </Folder>
+  <Folder Name="/_solution_items/">
+    <File Path=".dockerignore" />
+    <File Path=".editorconfig" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+</Solution>

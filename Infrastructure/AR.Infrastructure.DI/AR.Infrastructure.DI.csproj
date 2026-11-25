@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Update="Microsoft.VisualStudio.Threading.Analyzers">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\AR.Infrastructure.BackgroundServices\AR.Infrastructure.BackgroundServices.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\AR.Infrastructure.Providers\AR.Infrastructure.Providers.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\AR.Infrastructure.Queues\AR.Infrastructure.Queues.csproj" ExcludeAssets="compile" />
+  </ItemGroup>
+  
+</Project>

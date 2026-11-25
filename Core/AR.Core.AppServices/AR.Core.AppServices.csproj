@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>AR.Core.Configurations</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ARNetExt.Models" />
+    <PackageReference Include="ARNetExt.Require" />
+    <PackageReference Include="ARNetExt.Strings" />
+    <PackageReference Include="ARNetExt.Utils" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Options" />
+    <PackageReference Include="Microsoft.Extensions.Logging" />
+    <PackageReference Update="Microsoft.VisualStudio.Threading.Analyzers">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\AR.Infrastructure.Hosting\AR.Infrastructure.Hosting.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\..\Infrastructure\AR.Infrastructure.Json\AR.Infrastructure.Json.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\..\Infrastructure\AR.Infrastructure.Jwt\AR.Infrastructure.Jwt.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\..\Infrastructure\AR.Infrastructure.Providers\AR.Infrastructure.Providers.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\..\Shared\AR.Shared\AR.Shared.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\AR.Core.Domain\AR.Core.Domain.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\AR.Core.EventHandlers\AR.Core.EventHandlers.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\AR.Core.Events\AR.Core.Events.csproj" ExcludeAssets="compile" />
+    <ProjectReference Include="..\AR.Core.Persistence\AR.Core.Persistence.csproj" ExcludeAssets="compile" />
+  </ItemGroup>
+  
+</Project>
