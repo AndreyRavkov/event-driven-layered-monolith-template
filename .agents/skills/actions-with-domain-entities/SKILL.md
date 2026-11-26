@@ -1,21 +1,12 @@
 ---
 name: actions-with-domain-entities
 description: Add, change, or delete a domain entity in the AR.Core.Domain project, following the solution's DDD conventions (Entity / AuditableEntity base types, EntityMap<T> / AuditableEntityMap<T> EF mappings, snake_case columns, auto-discovered configurations). Use when the user asks to add a domain entity/model, add or rename a property/column, change an entity mapping, or remove an entity. Other layer skills (repository, app service) invoke this skill when they need an entity to exist.
-user-invocable: true
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash(dotnet build *)
-  - Bash(dotnet format *)
-  - Grep
-  - Glob
 ---
 
 # Add / Change / Delete a Domain Entity (AR.Core.Domain)
 
 Guidance for shaping the domain model the way this solution does it.
-Keep changes surgical and match surrounding style — see `common-llm.md`.
+Keep changes surgical and match surrounding style — see `AGENTS.md`.
 
 This skill owns **only the domain layer** (`Core/AR.Core.Domain`): the entity type
 and its EF mapping. It does **not** touch persistence, repositories, app services,

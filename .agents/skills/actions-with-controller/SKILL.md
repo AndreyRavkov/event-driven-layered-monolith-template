@@ -1,21 +1,12 @@
 ---
 name: actions-with-controller
 description: Create a new API controller or extend an existing one in the AR.API project, following the solution's conventions (BaseApiV1Controller, thin *ApiService adapters, FluentValidation request DTOs, convention-based DI). Use when the user asks to add an endpoint, add a controller, add an action/route, or modify an existing controller.
-user-invocable: true
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash(dotnet build *)
-  - Bash(dotnet format *)
-  - Grep
-  - Glob
 ---
 
 # Create or Update or Delete a Controller (AR.API)
 
 Guidance for adding or extending controllers the way this solution does it.
-Keep changes surgical and match surrounding style — see `common-llm.md`.
+Keep changes surgical and match surrounding style — see `AGENTS.md`.
 Keep the controller thin and use the `ApiServices` skill. 
 
 ## Layering — where each piece lives

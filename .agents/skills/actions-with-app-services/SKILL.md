@@ -1,21 +1,12 @@
 ---
 name: actions-with-app-services
 description: Add, change, or delete an application service in the AR.Core.AppServices project — orchestration of domain operations inside an IUnitOfWork transaction, emission of domain events, and convention-based DI. Use when the user asks to add a use case / business action (create / update / soft-delete / activate / "do X" on an aggregate), wire an AppService into a flow, change transactional / event behaviour, or remove an app service. Other layer skills (controller, ApiService, persistence, events, event handlers) invoke this skill when they need an app service to exist.
-user-invocable: true
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash(dotnet build *)
-  - Bash(dotnet format *)
-  - Grep
-  - Glob
 ---
 
 # Add / Change / Delete an Application Service (AR.Core.AppServices)
 
 Guidance for shaping the application-service layer the way this solution does it.
-Keep changes surgical and match surrounding style — see `common-llm.md`.
+Keep changes surgical and match surrounding style — see `AGENTS.md`.
 
 This skill owns **only the application-service project** (`Core/AR.Core.AppServices`):
 the `*AppService` types that orchestrate one use case, the `Try.CommitAsync`

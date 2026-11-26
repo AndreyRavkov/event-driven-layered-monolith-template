@@ -1,21 +1,12 @@
 ---
 name: actions-with-persistence
 description: Add, change, or remove persistence-layer pieces in the AR.Core.Persistence project — repositories (Repository pattern over EF Core), Dapper query/command handlers (CQRS-lite read/write split), the DbDomainContext, the UnitOfWork, and SaveChanges interceptors. Use when the user asks to add a repository, add a Dapper query/command handler, change EF Core wiring, register an interceptor, or alter the unit-of-work / transaction shape. Other layer skills (app service, controller) invoke this skill when they need a repository or handler to exist.
-user-invocable: true
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash(dotnet build *)
-  - Bash(dotnet format *)
-  - Grep
-  - Glob
 ---
 
 # Add / Change / Delete Persistence Code (AR.Core.Persistence)
 
 Guidance for shaping the persistence layer the way this solution does it.
-Keep changes surgical and match surrounding style — see `common-llm.md`.
+Keep changes surgical and match surrounding style — see `AGENTS.md`.
 
 This skill owns **only the persistence project** (`Core/AR.Core.Persistence`):
 the EF `DbDomainContext`, generic `IRepository<T>`, feature-scoped

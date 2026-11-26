@@ -1,21 +1,12 @@
 ---
 name: actions-with-api-services
 description: Add, change, or delete an API service in the AR.ApiServices project — the thin HTTP-facing adapter that maps request DTOs (BaseValidationModel<T> + FluentValidation) onto the corresponding AppService, with convention-based DI. Use when the user asks to add / change / remove a *ApiService, add a request DTO + validator, expose a new AppService method to the API, or reshape the contract a controller talks to. Other layer skills (controller, app service) invoke this skill when they need an ApiService or request DTO to exist.
-user-invocable: true
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash(dotnet build *)
-  - Bash(dotnet format *)
-  - Grep
-  - Glob
 ---
 
 # Add / Change / Delete an API Service (AR.ApiServices)
 
 Guidance for shaping the API-service layer the way this solution does it.
-Keep changes surgical and match surrounding style — see `common-llm.md`.
+Keep changes surgical and match surrounding style — see `AGENTS.md`.
 
 This skill owns **only the API-service project** (`API/AR.ApiServices`):
 
