@@ -1,6 +1,6 @@
 ---
 paths:
-  - "solution/AR/API/AR.API/**/*.cs"
+  - "API/AR.API/**/*.cs"
 ---
 
 ## Rule for **API Layer** for Web API

@@ -1,6 +1,6 @@
 ---
 paths:
-  - "solution/AR/**/*.cs"
+  - "**/*.cs"
 ---
 
 ## Code style (build-breaking)

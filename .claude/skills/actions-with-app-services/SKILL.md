@@ -192,7 +192,7 @@ you — your job is the business logic in between.
    - `MayBe<T>` from `ARNetExt` is the return type of single-entity reads;
      pattern-match with `Match(...)` rather than null-checking.
    - Throw the project's `*ExceptionExt` types (`NotFoundExceptionExt`,
-     `UnAuthorizationExceptionExt`, `BusinessExceptionExt`, …) for business
+     `UnAuthorizationExceptionExt`, `BadRequestExceptionExt`, `ForbiddenExceptionExt`) for business
      failures. `GlobalExceptionHandler` in the API project maps them to
      `ProblemDetails`. Do not throw `Exception` / `InvalidOperationException`
      for business signals.
@@ -356,7 +356,7 @@ convention-based on assembly scan — no `AppServicesDIModule` edit is needed.
 - [ ] Write paths run inside a single `Try.CommitAsync(...)`; no direct `BeginTransactionAsync` / `SaveChangesAsync` / `CommitAsync` calls.
 - [ ] `IEventDispatcher` is passed to `Try.CommitAsync` whenever the action raises events; events are added **inside** the action.
 - [ ] Single-entity lookups use `MayBe<T>.Match(...)`; no `null` leaks.
-- [ ] Business failures throw `*ExceptionExt` (e.g. `NotFoundExceptionExt`, `BusinessExceptionExt`), not raw `Exception`.
+- [ ] Business failures throw `*ExceptionExt` (e.g. `NotFoundExceptionExt`, `BadRequestExceptionExt`), not raw `Exception`.
 - [ ] Audit columns are not set by hand; soft delete sets `Active = false` on a tracked entity.
 - [ ] No `DbContext`, `DbSet<T>`, `IQueryable<T>`, HTTP types, or DTOs from `AR.ApiServices` reach this layer.
 - [ ] No persistence / domain / event / handler / controller / ApiService code touched — those went through their own skills.

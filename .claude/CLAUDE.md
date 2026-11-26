@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-Run from the solution root (`solution/AR`).
+Run from the repo root (where `AR.slnx` lives).
 
 ```bash
 # Build entire solution — warnings ARE errors (see Code style)

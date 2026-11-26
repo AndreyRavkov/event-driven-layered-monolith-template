@@ -1,6 +1,6 @@
 ---
 paths:
-  - "solution/AR/Core/**/*.cs"
+  - "Core/**/*.cs"
 ---
 
 ## Rule for **Domain / Core Layer**

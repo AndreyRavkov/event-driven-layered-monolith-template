@@ -1,5 +1,5 @@
 ---
-name: create-or-update-controller
+name: actions-with-controller
 description: Create a new API controller or extend an existing one in the AR.API project, following the solution's conventions (BaseApiV1Controller, thin *ApiService adapters, FluentValidation request DTOs, convention-based DI). Use when the user asks to add an endpoint, add a controller, add an action/route, or modify an existing controller.
 user-invocable: true
 allowed-tools:

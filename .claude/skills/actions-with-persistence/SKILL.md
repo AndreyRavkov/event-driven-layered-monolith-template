@@ -30,7 +30,7 @@ work needs those, delegate to their skills:
 | Business logic, transactions, soft-delete intent | app-service skill (`AR.Core.AppServices`) |
 | Domain **event type** | events skill (`AR.Core.Events`) |
 | Pre/post-commit handler, queue consumer | event-handler / consumer skill |
-| HTTP endpoint, request DTO, validator | `create-or-update-controller` (`AR.API` / `AR.ApiServices`) |
+| HTTP endpoint, request DTO, validator | `actions-with-controller` (`AR.API` / `AR.ApiServices`) |
 
 If a request crosses layers, edit only this layer here and ask the calling
 skill to handle the rest. Do not touch entity classes, app services, or

@@ -1,6 +1,6 @@
 ---
 paths:
-  - "solution/AR/Infrastructure/**/*.cs"
+  - "Infrastructure/**/*.cs"
 ---
 
 ## Rule for **Infrastructure Layer**
