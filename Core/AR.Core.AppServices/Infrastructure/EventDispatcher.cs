@@ -9,7 +9,7 @@ internal interface IEventDispatcher
     Task DispatchPostEventsAsync(IReadOnlyList<BaseDomainEvent> events, CancellationToken ct = default);
 }
 
-internal class EventDispatcher : IEventDispatcher
+internal sealed class EventDispatcher : IEventDispatcher
 {
     private readonly IEnumerable<IEventHandler> _eventHandlers;
 

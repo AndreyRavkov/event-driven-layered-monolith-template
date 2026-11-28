@@ -1,4 +1,5 @@
 using AR.Core.AppServices.Account;
+using JetBrains.Annotations;
 
 namespace AR.ApiServices.Account;
 
@@ -8,7 +9,8 @@ public interface IAccountApiService
     string RefreshToken(int userId, string userName);
 }
 
-internal class AccountApiService : IAccountApiService
+[UsedImplicitly]
+internal sealed class AccountApiService : IAccountApiService
 {
     private readonly IAccountAppService _accountAppService;
 

@@ -14,7 +14,7 @@ public interface IAccountAppService
     string RefreshToken(int userId, string userName);
 }
 
-internal class AccountAppService : IAccountAppService
+internal sealed class AccountAppService : IAccountAppService
 {
     private readonly IEventDispatcher _eventDispatcher;
     private readonly IUnitOfWork _unitOfWork;

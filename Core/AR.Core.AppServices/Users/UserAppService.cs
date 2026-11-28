@@ -1,5 +1,6 @@
 using AR.Core.Persistence.Repositories.Users;
 using AR.NetExt.Utils.Collections;
+using JetBrains.Annotations;
 
 namespace AR.Core.AppServices.Users;
 
@@ -7,7 +8,8 @@ public interface IUserAppService {
     Task<IReadOnlyList<(int Id, string Name)>> GetAsync();
 }
 
-internal class UserAppService : IUserAppService
+[UsedImplicitly]
+internal sealed class UserAppService : IUserAppService
 {
     private readonly IUserRepository _userRepository;
 
