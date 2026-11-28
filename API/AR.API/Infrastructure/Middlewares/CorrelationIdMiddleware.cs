@@ -26,7 +26,7 @@ internal sealed class CorrelationIdMiddleware(RequestDelegate next)
                 // local .net trace string
                 var traceIdentifier = httpContext.TraceIdentifier;
 
-                correlationId = traceId.IsNullOrEmptyExt() ? traceIdentifier : traceId;
+                correlationId = traceId.IsBlankExt() ? traceIdentifier : traceId;
             }
 
             // add to request to get from ExecutionContext
@@ -35,7 +35,7 @@ internal sealed class CorrelationIdMiddleware(RequestDelegate next)
             httpContext.Response.Headers[Constants.CorrelationIdHeader] = correlationId;
 
             // add to logger
-            using (LogContext.PushProperty("CorrelationId", correlationId))
+            using (LogContext.PushProperty(Constants.CorrelationIdHeaderLogName, correlationId))
             {
                 await next(httpContext);
             }

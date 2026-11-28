@@ -2,9 +2,12 @@ using AR.API.Infrastructure.Models;
 using AR.Infrastructure.Hosting;
 using AR.Infrastructure.Json;
 using AR.NetExt.Models.Exceptions;
+using AR.NetExt.Strings;
 using AR.NetExt.Utils.Collections;
+using AR.Shared;
 using FluentValidation;
 using Microsoft.AspNetCore.Diagnostics;
+using Serilog.Context;
 
 namespace AR.API.Infrastructure.ExceptionHandlers;
 
@@ -12,9 +15,12 @@ internal sealed class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> log
 {
     public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken ct)
     {
-        logger.LogError(exception, exception.Message);
+        // ExceptionHandlerMiddleware clears the response, removing previously set headers.
+        // Restore the correlation ID header when handling an exception. See:
+        // https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Diagnostics/src/ExceptionHandler/ExceptionHandlerMiddlewareImpl.cs#L298
+        WriteLogMessage(httpContext, exception);
 
-        httpContext.Response.ContentType = ApiConstants.ContentTypeJson;
+        httpContext.Response.ContentType ??= ApiConstants.ContentTypeJson;
         var problemDetails = new ARProblemDetailsModel()
         {
             Detail = exception.Message,
@@ -77,5 +83,20 @@ internal sealed class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> log
         await httpContext.Response.WriteAsync(JsonProvider.Serialize(problemDetails), cancellationToken: ct);
 
         return true;
+    }
+
+    private void WriteLogMessage(HttpContext httpContext, Exception exception)
+    {
+        if (httpContext.Items.TryGetValue(Constants.CorrelationIdHeader, out var correlationIdObj)
+            && correlationIdObj is string correlationId
+            && !correlationId.IsBlankExt())
+        {
+            httpContext.Response.Headers[Constants.CorrelationIdHeader] = correlationId;
+
+            using (LogContext.PushProperty(Constants.CorrelationIdHeaderLogName, correlationId))
+            {
+                logger.LogError(exception, "{Name}:{Message}", nameof(GlobalExceptionHandler), exception.Message);
+            }
+        }
     }
 }
