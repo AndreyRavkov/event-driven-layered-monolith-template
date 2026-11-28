@@ -13,12 +13,4 @@
     <ProjectReference Include="..\AR.Core.Persistence\AR.Core.Persistence.csproj" ExcludeAssets="compile" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" />
-    <PackageReference Update="Microsoft.VisualStudio.Threading.Analyzers">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
 </Project>

@@ -10,7 +10,7 @@ Keep changes surgical and match surrounding style — see `AGENTS.md`.
 
 This skill owns **only the API-service project** (`API/AR.ApiServices`):
 
-- `*ApiService` adapters (`I<Name>ApiService` + `internal <Name>ApiService`).
+- `*ApiService` adapters (`I<Name>ApiService` + `internal sealed <Name>ApiService`).
 - Request DTOs that derive from `BaseValidationModel<T>`.
 - The `AbstractValidator<T>` for each DTO.
 - The local `ApiServicesDIModule` wiring (rarely touched — it is convention-based).
@@ -122,7 +122,7 @@ matching `*AppService` already exposes (or will expose) the operation.
    }
 
    [UsedImplicitly]
-   internal class WidgetApiService : IWidgetApiService
+   internal sealed class WidgetApiService : IWidgetApiService
    {
        private readonly IWidgetAppService _widgetAppService;
 
@@ -136,7 +136,7 @@ matching `*AppService` already exposes (or will expose) the operation.
    }
    ```
 
-   - Interface is `public`; impl is `internal` and `[UsedImplicitly]` (the
+   - Interface is `public`; impl is `internal sealed` and `[UsedImplicitly]` (the
      convention scanner is the only "user"; the attribute also keeps Rider /
      ReSharper from flagging the class as unused).
    - Postfix is **exactly `ApiService`** — `AddServicesFromAssemblyExt` keys
@@ -238,7 +238,7 @@ public interface IWidgetApiService
 }
 
 [UsedImplicitly]
-internal class WidgetApiService : IWidgetApiService
+internal sealed class WidgetApiService : IWidgetApiService
 {
     private readonly IWidgetAppService _widgetAppService;
 
@@ -329,7 +329,7 @@ scan — no `ApiServicesDIModule` edit is needed.
 ## Checklist before finishing
 
 - [ ] File placed under `API/AR.ApiServices/<Area>/`, namespace `AR.ApiServices.<Area>`.
-- [ ] Class is `internal` and `[UsedImplicitly]`; interface is `public`.
+- [ ] Class is `internal sealed` and `[UsedImplicitly]`; interface is `public`.
 - [ ] Naming postfix is exact: `ApiService` on both class and interface (`IFooApiService` / `FooApiService`). DI scan depends on it.
 - [ ] No manual DI registration added — convention scan handles it.
 - [ ] Methods are delegations; no business logic, no transactions, no event raising, no `MayBe<T>.Match`, no `*ExceptionExt` throws.

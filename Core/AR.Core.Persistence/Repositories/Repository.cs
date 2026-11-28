@@ -19,7 +19,7 @@ public interface IRepository<T> where T : Entity
     void UpdateRange(IReadOnlyList<T> entities);
 }
 
-internal class Repository<T> : IRepository<T> where T : Entity
+internal sealed class Repository<T> : IRepository<T> where T : Entity
 {
     private readonly DbSet<T> _dbSet;
 

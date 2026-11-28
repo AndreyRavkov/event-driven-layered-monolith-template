@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace AR.Infrastructure.BackgroundServices;
 
-internal class ChannelQueueBackgroundService : BackgroundService
+internal sealed class ChannelQueueBackgroundService : BackgroundService
 {
     private readonly IChannelQueue _channelQueue;
     private readonly ILogger<ChannelQueueBackgroundService> _logger;

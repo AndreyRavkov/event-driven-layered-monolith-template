@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AR.Core.Persistence.Context;
 
-internal class DbDomainContext : DbContext
+internal sealed class DbDomainContext : DbContext
 {
     public DbDomainContext(DbContextOptions<DbDomainContext> options) : base(options)
     {

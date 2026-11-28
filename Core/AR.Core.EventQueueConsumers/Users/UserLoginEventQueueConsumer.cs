@@ -4,7 +4,7 @@ using AR.Shared.Options;
 
 namespace AR.Core.EventQueueConsumers.Users;
 
-internal class UserLoginEventQueueConsumer : IQueueConsumer
+internal sealed class UserLoginEventQueueConsumer : IQueueConsumer
 {
     private readonly DataBaseSettings _dataBaseSettings;
 

@@ -1,6 +1,6 @@
 namespace AR.API.Infrastructure.Attributes.Binders;
 
-internal class CommaSeparatedEnumValues<T>  : CommaSeparatedBaseModelBinder<T>
+internal sealed class CommaSeparatedEnumValues<T>  : CommaSeparatedBaseModelBinder<T>
     //added struct to skip Nullable<T> so T not nullable
     where T : struct, Enum
 {

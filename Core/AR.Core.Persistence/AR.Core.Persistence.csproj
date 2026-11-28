@@ -5,12 +5,11 @@
       <_Parameter1>AR.Core.Configurations</_Parameter1>
     </AssemblyAttribute>
   </ItemGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="ARNetExt.MayBe" />
     <PackageReference Include="ARNetExt.Utils" />
     <PackageReference Include="Dapper" />
-    <PackageReference Include="JetBrains.Annotations" />
     <PackageReference Include="Microsoft.Bcl.Cryptography" />
     <PackageReference Include="Microsoft.Data.SqlClient" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" />
@@ -27,10 +26,6 @@
     <PackageReference Include="System.Diagnostics.EventLog" />
     <PackageReference Include="System.Security.Cryptography.Pkcs" />
     <PackageReference Include="System.Security.Cryptography.ProtectedData" />
-    <PackageReference Update="Microsoft.VisualStudio.Threading.Analyzers">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="System.Threading.RateLimiting" />
   </ItemGroup>
 

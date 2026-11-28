@@ -7,7 +7,7 @@ public interface IUserApiService
     Task<IReadOnlyList<(int Id, string Name)>> GetAsync();
 }
 
-internal class UserApiService : IUserApiService
+internal sealed class UserApiService : IUserApiService
 {
     private readonly IUserAppService _userAppService;
 

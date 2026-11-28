@@ -127,7 +127,7 @@ Unlike the Core layer, Infrastructure is **not** postfix auto-registered. Each p
 
 Skill: `actions-with-api-services`.
 
-- Each Service should be internal with a public interface. Interface and class live in the same file.
+- Each Service should be internal sealed with a public interface. Interface and class live in the same file.
 - The layer is a thin adapter — no business logic. Just a simple mapping between the request and the response. Or validation request. Or multiple requests to `AR.AppServices` with combining results to response.
 - Each API Service should has `ApiService` postfix. DI isn’t needed, because it resolved automatically inside `ApiServicesDIModule.cs` file.
 - All request Models should be located in the `Models` folder under each business subfolder. Each model should be inherited from `BaseValidationModel`. Validators should be located in the `Validators` folder under each business subfolder.
@@ -232,6 +232,7 @@ Target `net10.0`, nullable + implicit usings enabled, XML doc generation on (`CS
 # Code Development Rules
 
 - each class should follow the solution naming convention.
+- every `internal` class is declared `internal sealed` (exceptions: `static`, `abstract`, or a class used as a base class).
 - each class (or object) is located in the right folder (or layer) and be in the right namespace.
 - each class should have a single responsibility.
 - each class should have a clear and concise name.

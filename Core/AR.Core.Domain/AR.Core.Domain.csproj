@@ -21,10 +21,6 @@
     <PackageReference Include="System.Diagnostics.EventLog" />
     <PackageReference Include="System.Security.Cryptography.Pkcs" />
     <PackageReference Include="System.Security.Cryptography.ProtectedData" />
-    <PackageReference Update="Microsoft.VisualStudio.Threading.Analyzers">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="System.Threading.RateLimiting" />
   </ItemGroup>
 

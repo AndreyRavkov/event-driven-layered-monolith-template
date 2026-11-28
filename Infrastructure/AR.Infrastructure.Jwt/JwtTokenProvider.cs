@@ -12,7 +12,7 @@ public interface IJwtTokenProvider
     string Create(JwtTokenDtoModel model);
 }
 
-internal class JwtTokenProvider : IJwtTokenProvider
+internal sealed class JwtTokenProvider : IJwtTokenProvider
 {
     private readonly JwtSettings _jwtSettings;
 
